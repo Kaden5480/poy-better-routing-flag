@@ -27,6 +27,10 @@ namespace BetterRoutingFlag {
 
             Harmony.CreateAndPatchAll(typeof(Plugin.PatchRoutingFlagRestore));
             Harmony.CreateAndPatchAll(typeof(Plugin.PatchRoutingFlagSave));
+
+            // Remove falling rocks
+            Harmony.CreateAndPatchAll(typeof(Patches.PatchFallingRock));
+            Harmony.CreateAndPatchAll(typeof(Patches.PatchIceFall));
         }
 
 #elif MELONLOADER
@@ -121,6 +125,45 @@ namespace BetterRoutingFlag {
 
         /**
          * <summary>
+         * Resets crampons.
+         * </summary>
+         */
+        private static void ResetCrampons() {
+            StemFoot stemFoot = GameObject.Find("CramponsWallkick").GetComponent<StemFoot>();
+            stemFoot.wallkickCooldown = 0f;
+        }
+
+        /**
+         * <summary>
+         * Resets stamina.
+         * </summary>
+         */
+        private static void ResetStamina() {
+            ClimbingPitches pitches = GameObject.Find("ClimbingPitches").GetComponent<ClimbingPitches>();
+            MicroHolds microHolds = GameObject.Find("Player").GetComponent<MicroHolds>();
+            IceAxe iceAxes = GameObject.Find("IceAxes").GetComponent<IceAxe>();
+
+            Vector3 originalStaminaCircleScale = (Vector3) typeof(ClimbingPitches).GetField(
+                "originalStaminaCircleScale",
+                BindingFlags.NonPublic | BindingFlags.Instance
+            ).GetValue(pitches);
+
+            // Crimps/pinches
+            microHolds.leftHandGripStrength = 100f;
+            microHolds.rightHandGripStrength = 100f;
+            microHolds.leftHandGripStrength_Pinch = 100f;
+            microHolds.rightHandGripStrength_Pinch = 100f;
+
+            // Pitches
+            pitches.staminaCircle.localScale = originalStaminaCircleScale;
+
+            // Pickaxes
+            iceAxes.iceAxeStaminaL = 100f;
+            iceAxes.iceAxeStaminaR = 100f;
+        }
+
+        /**
+         * <summary>
          * Patches the routing flag to save camera rotations.
          * </summary>
          */
@@ -189,6 +232,9 @@ namespace BetterRoutingFlag {
                 if (rotation == null) {
                     return;
                 }
+
+                ResetCrampons();
+                ResetStamina();
 
                 cameraLook = GameObject.Find("CamY").GetComponent<CameraLook>();
                 playerCameraHolder = GameObject.Find("PlayerCameraHolder").transform;

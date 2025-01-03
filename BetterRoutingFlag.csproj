@@ -3,8 +3,8 @@
     <TargetFramework>net472</TargetFramework>
     <Platform>Any CPU</Platform>
     <AssemblyName>BetterRoutingFlag</AssemblyName>
-    <Description>A Peaks of Yore mod which saves and restores camera rotation for the routing flag</Description>
-    <Version>0.1.0</Version>
+    <Description>A Peaks of Yore mod which provides qol improvements for the routing flag</Description>
+    <Version>0.1.1</Version>
     <RootNamespace>BetterRoutingFlag</RootNamespace>
     <Configurations>Debug-BepInEx;Release-BepInEx;Debug-MelonLoader;Release-MelonLoader</Configurations>
     <Configuration Condition="'$(Configuration)' == ''">Debug-BepInEx</Configuration>

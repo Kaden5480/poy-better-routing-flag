@@ -5,9 +5,10 @@
 
 A
 [Peaks of Yore](https://store.steampowered.com/app/2236070/)
-mod which saves and restores camera rotation for the routing flag.
+mod which provides qol improvements for the routing flag.
 
 # Overview
+- [Features](#features)
 - [Installing](#installing)
     - [BepInEx](#bepinex)
     - [MelonLoader](#melonloader)
@@ -15,6 +16,12 @@ mod which saves and restores camera rotation for the routing flag.
     - [Dotnet](#dotnet-build)
     - [Visual Studio](#visual-studio-build)
     - [Custom game locations](#custom-game-locations)
+
+# Features
+- Saves and restores camera rotation when placing/teleporting
+- Disables falling boulders
+- Resets crampons
+- Resets stamina
 
 # Installing
 ## BepInEx
