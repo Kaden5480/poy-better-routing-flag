@@ -45,7 +45,7 @@ namespace BetterRoutingFlag {
     public class Plugin: MelonMod {
         public override void OnInitializeMelon() {
             foreach (string sceneName in validScenes) {
-                MelonPreferences_Category scene = MelonPreferences.CreateCategory(sceneName);
+                MelonPreferences_Category scene = MelonPreferences.CreateCategory($"BetterRoutingFlag_{sceneName}");
                 scene.SetFilePath(
                     $"{MelonEnvironment.UserDataDirectory}/com.github.Kaden5480.poy-better-routing-flag.cfg"
                 );
