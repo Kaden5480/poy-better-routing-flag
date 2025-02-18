@@ -25,8 +25,9 @@ mod which provides qol improvements for the routing flag.
 
 # Installing
 ## BepInEx
-If you haven't installed BepInEx yet, follow the install instructions
-[here](https://github.com/Kaden5480/modloader-instructions#bepinex).
+If you haven't installed BepInEx yet, follow the install instructions here:
+- [Windows](https://github.com/Kaden5480/modloader-instructions#bepinex-windows)
+- [Linux](https://github.com/Kaden5480/modloader-instructions#bepinex-linux)
 
 ### Better Routing Flag
 - Download the latest BepInEx release
