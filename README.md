@@ -3,6 +3,9 @@
 ![Open issues](https://img.shields.io/github/issues/Kaden5480/poy-better-routing-flag?color=d65c5c)
 ![License](https://img.shields.io/github/license/Kaden5480/poy-better-routing-flag?color=a35cd6)
 
+> [!IMPORTANT]
+> This mod is obsolete.
+
 A
 [Peaks of Yore](https://store.steampowered.com/app/2236070/)
 mod which provides qol improvements for the routing flag.
